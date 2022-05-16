@@ -446,7 +446,7 @@ DFA dfa_minim(DFA &d) {
     std::cout << "merge_into_groups" << std::endl;
     auto minim_dfa = build_dfa(groups, d);
     std::cout << "build_dfa" << std::endl;
-
+    delete_unattainable(minim_dfa);
     minim_dfa.delete_state(DEAD_NAME);
     return minim_dfa;
 }
